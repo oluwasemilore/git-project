@@ -1,0 +1,174 @@
+DROP TABLE landlord CASCADE CONSTRAINTS;
+DROP TABLE apartmentBuilding CASCADE CONSTRAINTS;
+DROP TABLE tenant CASCADE CONSTRAINTS;
+DROP TABLE payment CASCADE CONSTRAINTS;
+DROP TABLE apartment CASCADE CONSTRAINTS;
+DROP TABLE notifications CASCADE CONSTRAINTS;
+DROP TABLE maintenance CASCADE CONSTRAINTS;
+DROP TABLE tenantNotifications CASCADE CONSTRAINTS;
+DROP TABLE iotDevice CASCADE CONSTRAINTS;
+DROP TABLE iotMonitoring CASCADE CONSTRAINTS;
+DROP TABLE DeviceWarningEvents CASCADE CONSTRAINTS;
+DROP TABLE TenantServiceRequest CASCADE CONSTRAINTS;
+
+
+CREATE TABLE landlord (
+landlordName varChar2(256) not null,
+landlordNumber varChar2(12) not null,
+landlordEmail varChar2(256),
+numberofProperties number(2),
+Primary Key (landlordNumber),
+Unique(landlordName)
+);
+
+CREATE TABLE ApartmentBuilding (
+    buildingNumber number(3) not null,
+    landlordName varChar2(256) not null,
+    landlordNumber varChar2 (256) not null,
+    numberOfFloors number(1) not null,
+    numberOfApartments number(3) not null,
+    apartmentsPerFloor number(2) not null,
+    handicapAccess varChar2(3) ,
+    Primary Key (buildingNumber, landlordName, landlordNumber),
+    Foreign Key (landlordNumber) references landlord(landlordNumber)
+);
+
+
+
+CREATE TABLE tenant (
+tenantName varChar2(256) not null,
+tenantAptNumber number(3) not null,
+tenantPhoneNumber varChar2(12) not null,
+numofTenants number(1) not null,
+tenantEmail varChar2(256),
+landlordName varChar2(256) not null, 
+landlordNumber varChar2(12) not null,
+buildingNumber number(3) not null,
+Primary Key ( tenantName, tenantAptNumber),
+Foreign Key (landlordNumber) references landlord(landlordNumber),
+Foreign Key (buildingNumber, landlordName, landlordNumber) references ApartmentBuilding(buildingNumber, landlordName, landlordNumber) 
+
+);
+
+
+
+
+CREATE TABLE payment (
+transactionNumber varChar2(9) not null, 
+paymentAmount number(10,2) not null,
+paymentDescription varChar2(256),
+paymentDate date not null,
+tenantName varChar2(256) not null,
+tenantAptNumber number(3) not null,
+landlordName varChar2(256) not null,
+landlordNumber varChar2(12) not null,
+Primary Key (transactionNumber),
+Foreign Key (tenantName,tenantAptNumber  )references tenant(tenantName, tenantAptNumber),
+Foreign Key (landlordNumber) references landlord(landlordNumber)
+
+);
+
+CREATE TABLE apartment(
+apartmentNumber number(3) not null,
+apartmentbuildingNumber number(3) not null,
+landlordName varChar2(256) not null,
+landlordNumber varChar2(12) not null,
+floor number(2) ,
+street varchar2(30) not null,
+Statename varchar2(20)not null,
+zipcode number(5)not null,
+bedroomNumber number (3) ,
+secruityDeposit number(6) not null,
+rentRate varchar2(3) not null,
+milestoHospital number(4) ,
+milestoInstitution number(4) ,
+primary key(apartmentNumber, apartmentbuildingNumber),
+Foreign Key (apartmentbuildingNumber,landlordName, landlordNumber) references ApartmentBuilding(buildingNumber, landlordName, landlordNumber) 
+
+);
+
+
+CREATE TABLE notifications (
+numbers varchar2(12) not null,
+timeSent varchar2(10) not null,
+alertSent varchar2(500),
+lateNotice varchar2(500), 
+reminderForPayment varchar2(100),
+paymentReceived varchar2(256),
+paymentSent varchar2(256),
+communityEventAlert varchar2(600),
+primary key (numbers, timeSent)
+
+);
+
+
+
+
+CREATE TABLE maintenance  (
+maintananceName varchar2(30) not null,
+badgeNumber number(6) not null,
+contactNumber varChar2(12) not null,
+startTime varchar2(7) ,
+endTime varchar2(7) ,
+operation varchar2(40) not null,
+primary key (badgenumber)
+
+);
+
+CREATE TABLE TenantNotifications (
+    timeSent date not null,
+    tenantPhoneNumber varChar2 (12) not null,
+    tenantName varChar2 (256) not null,
+    tenantAptNumber number(3),
+    Primary Key (timeSent, tenantPhoneNumber, tenantName, tenantAptNumber),
+    Foreign Key (tenantName, tenantAptNumber) references tenant( tenantName, tenantAptNumber)
+    
+);
+
+
+
+
+CREATE TABLE IOTDevice (
+iotdeviceID int not null,
+iotdevicewarrantySerialNO number(9),
+iotdevicemanufacture varchar2(35),
+iotdeviceapartmentNumber number(3) not null,
+iotdevicebuildingNumber number (3) not null,
+primary key  (iotdeviceid),
+foreign key (iotdeviceapartmentNumber,iotdevicebuildingNumber ) references apartment(apartmentNumber, apartmentbuildingNumber)
+
+);
+
+
+CREATE TABLE IOTMonitoring(
+iotDeviceNumber number(20) not null,
+maintenanceBadgeNumber number(20) not null,
+devicePassword varchar2(20) not null,
+Primary Key (iotDeviceNumber, maintenanceBadgeNumber),
+Foreign Key (maintenanceBadgeNumber) references Maintenance(badgeNumber)
+
+);
+
+
+CREATE TABLE DeviceWarningEvents(
+eventID number(8) not null,
+DeviceNumber number(10) not null,
+maintenanceBadgeNumber number(20) not null,
+Event1 varchar2(256),
+Event2 varchar2(256),
+Primary Key (DeviceNumber,eventID ),
+Foreign Key (DeviceNumber, maintenanceBadgeNumber ) references IOTMonitoring(iotDeviceNumber,maintenanceBadgeNumber )
+
+);
+
+CREATE TABLE TenantServiceRequest (
+tenantName varChar2(256) not null,
+tenantAptNumber number(3) not null,
+tenantBuildingNumber number(3) not null,
+maintenanceBadgeNumber number(30) not null,
+requestReason varChar2(256) not null,
+Primary Key(tenantName, maintenanceBadgeNumber),
+Foreign Key (maintenanceBadgeNumber) references Maintenance(badgeNumber),
+foreign key (tenantAptNumber,tenantBuildingNumber ) references apartment(apartmentNumber, apartmentbuildingNumber)
+
+);

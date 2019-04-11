@@ -1,0 +1,148 @@
+INSERT INTO landlord values ('Dymon Moore', '302-555-1233', 'dmooreproperties@dymon.com', 10);
+INSERT INTO landlord values ('Jarrett McClenton', '302-555-0000', 'jmcclenproperties@jarrett.com', 8);
+INSERT INTO landlord values ('Shore Ibirogba', '302-555-1200', 'shoreproperties@Ibirogba.com', 7);
+INSERT INTO landlord values ('Connor Irwin', '302-555-1334', 'connorproperties@Irwin.com', 5);
+INSERT INTO landlord values ('Tom Carper', '302-535-1134', 'tomprop@moreapartments.com', 4);
+INSERT INTO landlord values ('Chrissy Holmes', '302-555-1234', 'properties@chrissy.com', 3);
+INSERT INTO landlord values ('Chris Burns', '302-246-7584', 'burns@moreapartments.com', 2);
+INSERT INTO landlord values ('Yolanda Adams', '302-567-8832', 'adams@moreapartments.com', 6);
+INSERT INTO landlord values ('Bill Kolt', '302-436-1479', 'kolt@kolthomes.com', 16);
+INSERT INTO landlord values ('Monte Love', '302-426-2458', 'montelove@montesplaces.com', 3);
+
+INSERT INTO ApartmentBuilding Values (100, 'Dymon Moore', '302-555-1233', 5, 100, 10, 'Yes');
+INSERT INTO ApartmentBuilding Values (12, 'Jarrett McClenton', '302-555-0000', 7, 200, 15, 'No');
+INSERT INTO ApartmentBuilding Values (10, 'Shore Ibirogba', '302-555-1200', 6, 150, 17, 'No');
+INSERT INTO ApartmentBuilding Values (23, 'Connor Irwin', '302-555-1334', 4, 175, 14, 'Yes');
+INSERT INTO ApartmentBuilding Values (10, 'Dymon Moore', '302-555-1233', 8, 250, 35, 'No');
+INSERT INTO ApartmentBuilding Values (25, 'Jarrett McClenton', '302-555-0000', 1, 300, 30, 'No');
+INSERT INTO ApartmentBuilding Values (300, 'Chris Burns', '302-246-7584', 9, 225, 22, 'No');
+INSERT INTO ApartmentBuilding Values (12, 'Yolanda Adams', '302-567-8832', 5, 125, 15, 'No');
+INSERT INTO ApartmentBuilding Values (40, 'Bill Kolt', '302-436-1479', 6, 150, 8, 'Yes');
+INSERT INTO ApartmentBuilding Values (300, 'Tom Carper', '302-535-1134', 8, 200, 13, 'Yes');
+
+INSERT INTO tenant values ('Annie Brown', 3, '302-555-1111', 3,'anniebrown@gmail.com','Dymon Moore','302-555-1233',100);
+INSERT INTO tenant values ('John Gore', 2, '302-535-5611', 1,'gorejohn@yahoo.com','Jarrett McClenton','302-555-0000',12);
+INSERT INTO tenant values ('Aaron Dobb', 10, '302-345-7618', 4,'aaron@gmail.com','Jarrett McClenton','302-555-0000',25);
+INSERT INTO tenant values ('Jared Abel', 30, '276-761-3418', 2,'abel@comcast.net','Dymon Moore','302-555-1233',10);
+INSERT INTO tenant values ('Yasmine Ford', 21, '342-567-6790', 4,'yaz@gmail.com','Chris Burns','302-246-7584',300);
+INSERT INTO tenant values ('James Beckman', 32, '345-678-1292', 2,'beckman@aol.com','Shore Ibirogba','302-555-1200',10);
+INSERT INTO tenant values ('Eric Spellman', 24, '394-567-0821', 4,'spellman@aol.com','Yolanda Adams', '302-567-8832',12);
+INSERT INTO tenant values ('Hank Brown',13,'345-632-1456', 3,'brown123@gmail.com','Bill Kolt','302-436-1479',40);
+INSERT INTO tenant values ('Cheng Yang', 25, '435-009-2245', 5,'yang@yang.inc','Connor Irwin','302-555-1334',23);
+INSERT INTO tenant values ('Michelle Level', 12, '329-409-2345', 3,'levelmack@gmail.com','Tom Carper','302-535-1134',300);
+
+
+INSERT INTO payment values ('354677890',850.50,'Rent','01-JAN-2019','Annie Brown',3,'Dymon Moore', '302-555-1233');
+INSERT INTO payment values ('367890432',650.80,'Rent','05-MAR-2019','John Gore',2,'Jarrett McClenton', '302-555-0000');
+INSERT INTO payment values ('367858967',2000.80,'Rent','04-JUN-2019','Aaron Dobb',10,'Jarrett McClenton', '302-555-0000');
+INSERT INTO payment values ('367834554',1200.30,'Rent','10-JUN-2019','Jared Abel',30,'Dymon Moore', '302-555-1233');
+INSERT INTO payment values ('367334543',1490.43,'Rent','10-JUN-2019','Yasmine Ford',21,'Chris Burns', '302-246-7584');
+INSERT INTO payment values ('361234566',1430.23,'Rent','29-JUN-2019','James Beckman',32,'Shore Ibirogba', '302-555-1200');
+INSERT INTO payment values ('364356578',1120.23,'Rent','12-JUL-2019','Eric Spellman',24,'Yolanda Adams', '302-567-8832');
+INSERT INTO payment values ('364324358',894.23,'Rent','12-JUL-2019','Hank Brown',13,'Bill Kolt', '302-436-1479');
+INSERT INTO payment values ('362312452',1234.23,'Rent','04-MAY-2019','Cheng Yang',25,'Connor  Irwin', '302-555-1334');
+INSERT INTO payment values ('361234567',567.23,'Rent','21-JUN-2019','Michelle Level',12,'Tom Carper', '302-535-1134');
+
+INSERT INTO apartment VALUES(3,100,'Dymon Moore','302-555-1233',1,'800 Lancaster Ave','Maryland',20901,3,800,'75%',3,5);
+INSERT INTO apartment VALUES(2,12,'Jarrett McClenton','302-555-0000',4,'123 Apple Park Ave','California',19384,2,600,'55%',6,15);
+INSERT INTO apartment VALUES(10,25,'Jarrett McClenton','302-555-0000',9,'3820 Lincoln Dr','Texas',12346,4,950,'75%',9,20);
+INSERT INTO apartment VALUES(30,10,'Dymon Moore','302-555-1233', 1,'345 Fashion Ave','New York',21234,3,660,'55%',4,10);
+INSERT INTO apartment VALUES(21,300,'Chris Burns','302-246-7584',7,'1289 MLK BLVD','Delaware',19802,3,1050,'75%',5,9);
+INSERT INTO apartment VALUES(32,10,'Shore Ibirogba','302-555-1200',8,'100 Blue Ware Dr','Oregon',12443,2,560,'55%',1,8);
+INSERT INTO apartment VALUES(24,23,'Connor Irwin', '302-555-1334',2,'506 IVY Park','North Dakota',26765,3,1250,'75%',6,3);
+INSERT INTO apartment VALUES(13,12,'Yolanda Adams','302-567-8832',1,'1029 Lee BLVD','North Carolina',23435,1,360,'55%',9,6);
+INSERT INTO apartment VALUES(25,40,'Bill Kolt', '302-436-1479',1,'1203 Tree Lane','Oregon',76454,2,600,'55%',2,7);
+INSERT INTO apartment VALUES(12,300,'Tom Carper','302-535-1134',1,'5745 Roc Nation','Vermont',13324,3,750,'55%',10,50);
+
+
+
+INSERT INTO notifications VALUES('302-555-1111','23:01','Maintenance coming tonight at 12','Complaint Received About Mice','Exterminator will inspect apartment','Paid','Sent','n/A');
+INSERT INTO notifications VALUES('302-535-5611','13:11','Inspection 4/3','Maintenence Appointment.','This is a reminder for payment of the most recent month',null,null,'BBQ 4/22');
+INSERT INTO notifications VALUES('302-345-7618','06:21','Late Payment Reminder','This is a late notice','This is a reminder for payment of the most recent month.','Not Paid','Not Sent','n/A');
+INSERT INTO notifications VALUES('342-567-6790','20:14','Notification: Manager expected..','This is a late notice','This is a reminder for payment of the most recent month.','Not Paid','Not Sent','n/A');
+INSERT INTO notifications VALUES('345-678-1292','22:31','Greetings, this is your..',null,null,'Paid','Sent','Community Meeting 4/4 in building 3');
+INSERT INTO notifications VALUES('394-567-0821','22:21','Hello Tenant, Your request for...',null,null,'Not Paid','Not Sent','Community Ice Cream Party on the 5/01');
+INSERT INTO notifications VALUES('435-009-2245','07:16','This is a message to...','This is a late notice','This is a reminder for payment of the most recent month.','Paid','Not Sent','n/A');
+INSERT INTO notifications VALUES('345-632-1456','14:41','Warning. Theres has  a car brea...',null,null,'Paid','Sent','n/A');
+INSERT INTO notifications VALUES('276-761-3418','12:12','One of the..','This is a late notice','This is a reminder for payment of the most recent month.','Paid','Sent','Community BBQ has been postponed. Details coming in next alert!');
+INSERT INTO notifications VALUES('329-409-2345','22:21','Maintenance coming tonight at 12','This is a late notice.','This is a reminder for payment of the most recent month.','Paid','Not Sent','n/A');
+
+
+
+
+INSERT INTO maintenance VALUES('Josiah Jole',012345,'555-345-3432','15:05','15:35','toilet fix');
+INSERT INTO maintenance VALUES('Bob Smith',123456,'512-434-1234','15:45','16:05','toilet fix');
+INSERT INTO maintenance VALUES('Louis Stephen',234567,'654-123-8753','17:05','17:35','fan repair');
+INSERT INTO maintenance VALUES('Manny Brown',34567,'145-679-6545','15:00','15:45',' sink fix');
+INSERT INTO maintenance VALUES('James Brooks',45678,'604-678-3463','11:25','13:35','dishwasher repair');
+INSERT INTO maintenance VALUES('Carl Downing',56789,'765-246-7645','10:00','11:45',' rat infestation');
+INSERT INTO maintenance VALUES('Truty Smity',10123,'245-657-4565','13:00','13:25',' mouse trap');
+INSERT INTO maintenance VALUES('Mario Egers',10234,'764-324-1345','15:00','15:45',' cockroach');
+INSERT INTO maintenance VALUES('Micheal Smith',10345,'760-134-6546','20:00','21:00',' light issue fix');
+INSERT INTO maintenance VALUES('Jody Franklin',10456,'452-456-7641','18:00','19:45',' wiring fixing');
+
+
+INSERT INTO TenantNotifications values (to_date('01-JAN-2019 12:00:35','DD-MON-YYYY HH24:MI:SS'),'302-555-1111','Annie Brown',3);
+INSERT INTO TenantNotifications values (to_date('05-MAR-2019 02:34:12','DD-MON-YYYY HH24:MI:SS'),'302-535-5611','John Gore',2);
+INSERT INTO TenantNotifications values (to_date('04-JUN-2019 03:12:12','DD-MON-YYYY HH24:MI:SS'),'302-345-7618','Aaron Dobb',10);
+INSERT INTO TenantNotifications values (to_date('10-JUN-2019 09:32:45','DD-MON-YYYY HH24:MI:SS'),'276-761-3418','Jared Abel',30);
+INSERT INTO TenantNotifications values (to_date('10-JUN-2019 03:12:34','DD-MON-YYYY HH24:MI:SS'),'342-567-6790','Yasmine Ford',21);
+INSERT INTO TenantNotifications values (to_date('29-JUN-2019 02:34:12','DD-MON-YYYY HH24:MI:SS'),'345-678-129','James Beckman',32);
+INSERT INTO TenantNotifications values (to_date('12-JUL-2019 06:11:23','DD-MON-YYYY HH24:MI:SS'),'394-567-0821','Eric Spellman',24);
+INSERT INTO TenantNotifications values (to_date('12-JUL-2019 01:13:23','DD-MON-YYYY HH24:MI:SS'),'345-632-1456','Hank Brown',13);
+INSERT INTO TenantNotifications values (to_date('12-JUL-2019 01:13:23','DD-MON-YYYY HH24:MI:SS'),'435-009-2245','Cheng Yang',25);
+INSERT INTO TenantNotifications values (to_date('21-JUN-2019 07:17:21','DD-MON-YYYY HH24:MI:SS'),'329-409-2345','Michelle Level',12);
+
+
+
+
+INSERT INTO iotDevice VALUES(012345,667499292,'Motorola',3,100);
+INSERT INTO iotDevice VALUES(123456,437291830,'Qualcomm',2,12);
+INSERT INTO iotDevice VALUES(234567,102928283,'Best Buy',10,25);
+INSERT INTO iotDevice VALUES(34567,121233122,'Independent',30,10);
+INSERT INTO iotDevice VALUES(45678,999933323,'n/A',21,300);
+INSERT INTO iotDevice VALUES(56789,546272313,'Motorola',32,10);
+INSERT INTO iotDevice VALUES(10123,234568997,'Qualcomm',24,23);
+INSERT INTO iotDevice VALUES(10234,545222791,'Qualcomm',13,12);
+INSERT INTO iotDevice VALUES(10345,918504398,'Samsung',25,40);
+INSERT INTO iotDevice VALUES(10456,213457689,'Private Owner',12,300);
+
+
+
+INSERT INTO IOTMonitoring values(012345, 012345, 'Villanova');
+INSERT INTO IOTMonitoring values(123456, 123456, 'Wildcats');
+INSERT INTO IOTMonitoring values(234567, 234567, 'Philly');
+INSERT INTO IOTMonitoring values(34567, 34567, 'Pascall');
+INSERT INTO IOTMonitoring values(45678, 45678, 'NovaNation');
+INSERT INTO IOTMonitoring values(56789, 56789, 'Database');
+INSERT INTO IOTMonitoring values(10123, 10123, 'BrynMawr');
+INSERT INTO IOTMonitoring values(10234, 10234, 'Sixers');
+INSERT INTO IOTMonitoring values(10345, 10345, 'Embiid');
+INSERT INTO IOTMonitoring values(10456, 10456, 'Simmons');
+
+
+
+INSERT INTO DeviceWarningEvents values(34567890,012345,012345, 'Fire', null);
+INSERT INTO DeviceWarningEvents values(32456784,123456,123456, 'Haunted Room', 'Bugs and Mice' );
+INSERT INTO DeviceWarningEvents values(36976045,234567,234567, 'Tsunami', 'Flooded Basement');
+INSERT INTO DeviceWarningEvents values(30694593,34567,34567, 'Rabid Rabbit on the loose', null);
+INSERT INTO DeviceWarningEvents values(35068484,45678, 45678,'Tornado', null);
+INSERT INTO DeviceWarningEvents values(30486549,56789,56789, 'Alien Invasion', 'Penthouse got sucked into space');
+INSERT INTO DeviceWarningEvents values(35069134,10123,10123,'Florida Man attack', null);
+INSERT INTO DeviceWarningEvents values(35670193,10234, 10234,'Noise Complaint','Broken Toilet');
+INSERT INTO DeviceWarningEvents values(34567875,10345,10345,'Rat problem' ,'Mice' );
+INSERT INTO DeviceWarningEvents values(2343564,10456,10456,'Riot in the streets', null);
+
+
+INSERT INTO TenantServiceRequest VALUES('Annie Brown', 3,100, 012345,'Broken Air Condition');
+INSERT INTO TenantServiceRequest VALUES('John Gore', 2,12, 123456, 'Bug Complaint');
+INSERT INTO TenantServiceRequest VALUES('Aaron Dobb', 10,25, 234567,'Refrigerator does not get cold');
+INSERT INTO TenantServiceRequest VALUES('Jared Abel', 30,10, 34567, 'Heater not working');
+INSERT INTO TenantServiceRequest VALUES('Yasmine Ford', 21,300,45678, 'Busted Pipe');
+INSERT INTO TenantServiceRequest VALUES('James Beckman', 32,10 ,56789,'Mice and Bugs');
+INSERT INTO TenantServiceRequest VALUES('Eric Spellman', 24,23, 34567,'Draft from Window');
+INSERT INTO TenantServiceRequest VALUES('Hank Brown', 13,12 ,10123,'Air Condition not working');
+INSERT INTO TenantServiceRequest VALUES('Cheng Yang', 25,40 ,10345,'Water flow too cold');
+INSERT INTO TenantServiceRequest VALUES('Michelle Level', 12,300, 10456,'Ants in Kitchen');
+
+
